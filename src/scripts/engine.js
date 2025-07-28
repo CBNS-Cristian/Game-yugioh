@@ -22,7 +22,7 @@ const estado = {
 }   
 
 
-const caminhoImg = "/src/assets/icons/"
+const caminhoImg = "src/assets/icons/"
 const infoCartas = [
     {
         id:0,
@@ -57,7 +57,7 @@ async function pegarCartaAleatoria(){
 async function criarImagemCarta(idCarta, camposTotais){
     const cartaCriada = document.createElement("img");
     cartaCriada.setAttribute('height', '100px');
-    cartaCriada.setAttribute('src', '/src/assets/icons/card-back.png');
+    cartaCriada.setAttribute('src', 'src/assets/icons/card-back.png');
     cartaCriada.setAttribute('data-id', idCarta);
     cartaCriada.classList.add('card')
 
