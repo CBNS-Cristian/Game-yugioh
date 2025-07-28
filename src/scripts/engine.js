@@ -71,6 +71,15 @@ async function criarImagemCarta(idCarta, camposTotais){
     }
     return cartaCriada;
 }
+async function resetarDuelo(){
+    estado.cartasImagens.avatar.src = '';
+    estado.acoes.button.style.display='none';
+
+    // estado.cartasInternas.cartaDueloJogador.style.display='none'
+    // estado.cartasInternas.cartaDueloComputador.style.display='none'
+
+    init()
+}
 async function colocarNoCampo(idCarta){
     await removerTodasCartas();
     let idCartaComputador = await pegarCartaAleatoria();
@@ -126,15 +135,7 @@ async function repartirCartas(numeroCartas, camposTotais){
         document.getElementById(camposTotais).appendChild(criarCarta);
     }
 }
-async function resetarDuelo(){
-    estado.cartasImagens.avatar.src = '';
-    estado.acoes.button.style.display='none';
 
-    estado.cartasInternas.cartaDueloJogador.style.display='none'
-    estado.cartasInternas.cartaDueloComputador.style.display='none'
-
-    init()
-}
 function init(){
     repartirCartas(5, estado.cartasInternas.cartaJogador.id)
     repartirCartas(5, estado.cartasInternas.cartaComputador.id)
